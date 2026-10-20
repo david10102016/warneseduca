@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gestión Educativa Digital · Warnes 2027</title>
+<meta name="description" content="Propuesta de la Junta Escolar al Gobierno Autónomo Municipal de Warnes: programa piloto de gestión educativa digital en 15 unidades educativas, gestión 2027.">
+<meta name="theme-color" content="#1e1b4b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --indigo:#4f46e5;
+  --indigo-600:#4338ca;
+  --indigo-50:#eef2ff;
+  --indigo-100:#e0e7ff;
+  --ink:#1e1b4b;
+  --ink-2:#312e81;
+  --teal:#0d9488;
+  --teal-50:#e6f6f4;
+  --amber:#d97706;
+  --amber-50:#fef3e2;
+  --red:#dc2626;
+  --red-50:#fdecec;
+  --bg:#f5f6fb;
+  --surface:#ffffff;
+  --text:#1f2333;
+  --muted:#5b6078;
+  --line:#e2e4ef;
+  --serif:"Source Serif 4", Georgia, serif;
+  --sans:"Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: light;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--text);background:var(--bg);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased}
+img,svg{display:block}
+a{color:var(--indigo-600)}
+:focus-visible{outline:3px solid #a5b4fc;outline-offset:3px;border-radius:6px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--serif);color:var(--ink);line-height:1.15;letter-spacing:-.01em}
+h2{font-size:clamp(28px,4vw,40px);margin-bottom:14px}
+h3{font-size:21px;margin-bottom:6px}
+p{max-width:68ch}
+.lead{font-size:19px;color:var(--muted)}
+section{padding:88px 0;scroll-margin-top:62px}
+.icon{width:22px;height:22px;flex:none;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* ---------- Encabezado ---------- */
+.top{position:sticky;top:0;z-index:20;background:rgba(30,27,75,.96);backdrop-filter:blur(8px)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:62px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-weight:700;font-size:15px}
+.brand-mark{width:32px;height:32px;border-radius:9px;background:var(--indigo);display:grid;place-items:center}
+.brand-mark svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:2}
+.nav{display:flex;gap:4px}
+.nav a{color:#c7d2fe;text-decoration:none;font-size:14.5px;font-weight:500;padding:8px 12px;border-radius:8px}
+.nav a:hover{color:#fff;background:rgba(255,255,255,.08)}
+@media (max-width:860px){.nav{display:none}}
+
+/* ---------- Portada ---------- */
+.hero{background:var(--ink);color:#e0e7ff;padding:clamp(32px,6vh,72px) 0;overflow:hidden;position:relative;min-height:calc(100vh - 62px);min-height:calc(100svh - 62px);display:flex;align-items:center}
+.hero > .wrap{width:100%}
+.hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(600px 400px at 85% 30%,rgba(79,70,229,.55),transparent 70%),
+  radial-gradient(500px 300px at 10% 90%,rgba(13,148,136,.25),transparent 70%);pointer-events:none}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center}
+.hero-text{padding:0}
+.presenta{display:flex;align-items:center;gap:10px;font-size:15px;color:#a5b4fc;margin-bottom:22px}
+.presenta .dot{width:8px;height:8px;border-radius:50%;background:#5eead4}
+.hero h1{color:#fff;font-size:clamp(30px,min(4.4vw,5.6vh),54px);margin-bottom:clamp(14px,2.4vh,22px)}
+.hero .lead{color:#c7d2fe;margin-bottom:clamp(18px,3vh,30px);font-size:clamp(16px,2.2vh,19px)}
+.facts{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:clamp(20px,3.4vh,34px)}
+.fact{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:#e0e7ff;padding:8px 14px;border-radius:999px;font-size:14.5px}
+.fact .icon{width:18px;height:18px;color:#5eead4}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:16px;padding:13px 22px;border-radius:12px;text-decoration:none;transition:background .15s}
+.btn-primary{background:var(--indigo);color:#fff}
+.btn-primary:hover{background:#5b52f0}
+.btn-ghost{color:#fff;border:1px solid rgba(255,255,255,.3)}
+.btn-ghost:hover{background:rgba(255,255,255,.08)}
+.hero-device{display:flex;justify-content:center}
+.hero-device .iphone{--w:292px}
+@media (min-width:901px) and (max-height:900px){.hero-device .iphone{zoom:.9}}
+@media (min-width:901px) and (max-height:800px){.hero-device .iphone{zoom:.8}}
+@media (min-width:901px) and (max-height:700px){.hero-device .iphone{zoom:.7}}
+@media (max-width:900px){
+  .hero .wrap{grid-template-columns:1fr}
+  .hero{min-height:0}
+
+}
+
+/* ---------- iPhone ---------- */
+.iphone{--w:292px;width:var(--w);height:calc(var(--w)*2.07);border-radius:52px;padding:11px;position:relative;flex:none;
+  background:linear-gradient(145deg,#4a4a52,#1d1d22 40%,#3a3a42);box-shadow:0 0 0 1.5px #77777f inset,0 40px 80px -20px rgba(10,8,40,.55),0 12px 24px -10px rgba(10,8,40,.4)}
+.iphone::before,.iphone::after{content:"";position:absolute;width:4px;border-radius:2px;background:#2b2b31}
+.iphone::before{left:-4px;top:120px;height:60px;box-shadow:0 -46px 0 -1px #2b2b31,0 74px 0 0 #2b2b31}
+.iphone::after{right:-4px;top:150px;height:88px}
+.screen{width:100%;height:100%;border-radius:42px;overflow:hidden;background:#f4f5fa;position:relative;display:flex;flex-direction:column;font-family:-apple-system,"SF Pro Text",var(--sans);color:#1c1d26}
+.island{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:92px;height:27px;background:#000;border-radius:20px;z-index:3}
+.status{height:46px;display:flex;align-items:center;justify-content:space-between;padding:6px 26px 0 30px;font-size:13px;font-weight:600;flex:none}
+.status-icons{display:flex;gap:5px;align-items:center}
+.status-icons svg{height:11px;width:auto;fill:#1c1d26}
+.home-bar{position:absolute;bottom:7px;left:50%;transform:translateX(-50%);width:108px;height:4px;border-radius:3px;background:#1c1d26;opacity:.85}
+.app{flex:1;overflow:hidden;padding:4px 14px 18px;display:flex;flex-direction:column;gap:9px}
+.app-head{display:flex;align-items:center;justify-content:space-between;padding:2px 2px 4px}
+.app-head small{display:block;font-size:10.5px;color:#6b7089}
+.app-head b{font-size:19px;letter-spacing:-.01em}
+.avatar{width:32px;height:32px;border-radius:50%;background:var(--indigo-100);color:var(--indigo-600);display:grid;place-items:center;font-weight:700;font-size:12px}
+.card{background:#fff;border-radius:16px;padding:11px 12px;box-shadow:0 1px 2px rgba(20,20,60,.06)}
+.card-title{font-size:10.5px;color:#6b7089;margin-bottom:3px}
+.row{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.pill{font-size:10px;font-weight:700;padding:3px 8px;border-radius:999px;white-space:nowrap}
+.pill-ok{background:var(--teal-50);color:#0b7a70}
+.pill-warn{background:var(--amber-50);color:#a85b04}
+.pill-bad{background:var(--red-50);color:#b91c1c}
+.pill-info{background:var(--indigo-50);color:var(--indigo-600)}
+.big{font-size:24px;font-weight:700;letter-spacing:-.02em}
+.small{font-size:11px;color:#6b7089}
+.child{display:flex;gap:10px;align-items:center}
+.child .avatar{width:38px;height:38px;background:var(--teal-50);color:#0b7a70}
+.child b{font-size:14px;display:block}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.msg{display:flex;gap:9px}
+.msg-ico{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;flex:none}
+.msg-ico svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2}
+.msg b{font-size:12px;display:block}
+.msg span{font-size:11px;color:#6b7089;line-height:1.35;display:block}
+.tabbar{display:flex;justify-content:space-around;background:#fff;border-top:1px solid #eceef5;padding:7px 0 20px;flex:none}
+.tabbar div{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:9.5px;color:#8a8fa6}
+.tabbar svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8}
+.tabbar .on{color:var(--indigo)}
+.subj{padding:9px 12px}
+.subj-top{display:flex;justify-content:space-between;align-items:center;font-size:12.5px;font-weight:600}
+.subj-top span{font-size:15px;font-weight:700}
+.dims{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-top:7px}
+.dim{font-size:9px;color:#6b7089}
+.dim i{display:block;height:5px;border-radius:3px;background:#eceef5;margin-top:3px;position:relative;overflow:hidden}
+.dim i::after{content:"";position:absolute;inset:0;width:var(--v);background:var(--indigo);border-radius:3px}
+.seg{display:flex;background:#e9ebf3;border-radius:10px;padding:3px;font-size:11px;font-weight:600}
+.seg span{flex:1;text-align:center;padding:5px 0;border-radius:8px;color:#6b7089}
+.seg .on{background:#fff;color:#1c1d26;box-shadow:0 1px 2px rgba(0,0,0,.08)}
+
+/* ---------- Laptop ---------- */
+.laptop{width:100%;max-width:760px;margin:0 auto}
+.lid{background:#1b1b22;border-radius:18px 18px 6px 6px;padding:12px 12px 14px;box-shadow:0 0 0 1.5px #3c3c46 inset,0 30px 60px -24px rgba(10,8,40,.5)}
+.browser{background:#fff;border-radius:8px;overflow:hidden;font-size:12px}
+.chrome{display:flex;align-items:center;gap:10px;background:#eef0f6;padding:8px 12px;border-bottom:1px solid #dfe2ec}
+.dots{display:flex;gap:6px}
+.dots i{width:10px;height:10px;border-radius:50%;background:#cfd3e0}
+.address{flex:1;display:flex;align-items:center;gap:6px;justify-content:center;background:#fff;border-radius:7px;padding:5px 10px;color:#5b6078;font-size:11.5px;max-width:420px;margin:0 auto}
+.address svg{width:11px;height:11px;stroke:#5b6078;fill:none;stroke-width:2.2}
+.base{height:16px;background:linear-gradient(#d4d6de,#a9acb8);border-radius:0 0 18px 18px;margin:0 -26px;position:relative}
+.base::before{content:"";position:absolute;left:50%;top:0;transform:translateX(-50%);width:110px;height:6px;border-radius:0 0 8px 8px;background:#9a9dab}
+.dash{display:grid;grid-template-columns:150px 1fr;min-height:390px}
+.side{background:var(--ink);color:#c7d2fe;padding:14px 10px;display:flex;flex-direction:column;gap:3px}
+.side .logo{display:flex;align-items:center;gap:7px;color:#fff;font-weight:700;font-size:12.5px;margin-bottom:12px;padding:0 6px}
+.side .logo i{width:22px;height:22px;border-radius:6px;background:var(--indigo)}
+.side a{display:flex;align-items:center;gap:7px;padding:6px 8px;border-radius:7px;color:#c7d2fe;text-decoration:none;font-size:11.5px}
+.side a svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.8}
+.side a.on{background:rgba(255,255,255,.1);color:#fff}
+.main{padding:16px 18px;background:#f6f7fb;display:flex;flex-direction:column;gap:12px}
+.main-head{display:flex;justify-content:space-between;align-items:flex-end}
+.main-head b{font-size:16px;color:var(--ink);display:block}
+.main-head small{color:#6b7089;font-size:11px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}
+.stat{background:#fff;border:1px solid #e6e8f1;border-radius:10px;padding:9px 11px}
+.stat small{color:#6b7089;font-size:10.5px;display:block}
+.stat b{font-size:19px;color:var(--ink)}
+.panels{display:grid;grid-template-columns:1.1fr 1fr;gap:10px}
+.panel{background:#fff;border:1px solid #e6e8f1;border-radius:10px;padding:11px 12px}
+.panel h4{font-size:12px;color:var(--ink);margin-bottom:8px;font-family:var(--sans)}
+.light{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:8px}
+.light div{border-radius:8px;padding:6px 8px;font-size:10px;font-weight:600}
+.light b{display:block;font-size:17px}
+.risk{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-top:1px solid #f0f1f6;font-size:11px}
+.bar{display:grid;grid-template-columns:86px 1fr 30px;align-items:center;gap:7px;font-size:10.5px;margin-bottom:6px;color:#3b3f55}
+.bar i{height:7px;border-radius:4px;background:#eceef5;position:relative;overflow:hidden}
+.bar i::after{content:"";position:absolute;inset:0;width:var(--v);background:var(--c,var(--indigo));border-radius:4px}
+table.att{width:100%;border-collapse:collapse;font-size:11px}
+table.att th{text-align:left;color:#6b7089;font-weight:600;font-size:10.5px;padding:6px 8px;background:#f1f2f8}
+table.att td{padding:6px 8px;border-top:1px solid #f0f1f6}
+.mark{display:inline-flex;gap:4px}
+.mark span{width:22px;height:20px;border-radius:5px;display:grid;place-items:center;font-size:10px;font-weight:700;background:#f1f2f8;color:#9a9fb5}
+.mark .p{background:var(--teal);color:#fff}
+.mark .f{background:var(--red);color:#fff}
+.mark .l{background:var(--amber);color:#fff}
+.save{align-self:flex-end;background:var(--indigo);color:#fff;font-weight:600;font-size:11px;padding:7px 14px;border-radius:7px}
+@media (max-width:640px){
+  .dash{grid-template-columns:1fr}
+  .side{display:none}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .panels{grid-template-columns:1fr}
+  .base{margin:0 -10px}
+}
+
+/* ---------- Beneficios ---------- */
+.benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-top:40px}
+.benefit{background:var(--surface);padding:26px 24px}
+.benefit .icon{width:28px;height:28px;color:var(--indigo);margin-bottom:14px}
+.benefit h3{font-family:var(--sans);font-size:17.5px;font-weight:700;color:var(--ink)}
+.benefit p{font-size:15.5px;color:var(--muted)}
+@media (max-width:900px){.benefits{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.benefits{grid-template-columns:1fr}}
+.notice{display:flex;gap:14px;margin-top:28px;background:var(--amber-50);border:1px solid #f6d9a8;border-radius:14px;padding:18px 20px}
+.notice .icon{color:var(--amber);width:24px;height:24px}
+.notice b{color:#7a4303}
+.notice ul{margin:6px 0 0 18px;color:#6b4a1a;font-size:15.5px}
+
+/* ---------- Pantallas ---------- */
+.screens{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.roles{display:flex;flex-wrap:wrap;gap:8px;margin:32px 0 36px}
+.role-btn{font:inherit;font-weight:600;font-size:15px;border:1.5px solid var(--line);background:#fff;color:var(--muted);padding:10px 18px;border-radius:999px;cursor:pointer;display:flex;align-items:center;gap:8px}
+.role-btn svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8}
+.role-btn:hover{border-color:#c7d2fe;color:var(--ink)}
+.role-btn[aria-selected="true"]{background:var(--indigo);border-color:var(--indigo);color:#fff}
+.stage{display:grid;grid-template-columns:1fr 1.5fr;gap:48px;align-items:center}
+.stage-text h3{font-size:28px;margin-bottom:12px}
+.stage-text ul{list-style:none;display:flex;flex-direction:column;gap:12px;margin-top:18px}
+.stage-text li{display:flex;gap:10px;color:var(--muted)}
+.stage-text li .icon{color:var(--teal);width:20px;height:20px;margin-top:3px}
+.stage-device{display:flex;justify-content:center}
+.panel-role[hidden]{display:none}
+.panel-role{animation:show .35s ease}
+@keyframes show{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.illus{font-size:13.5px;color:var(--muted);margin-top:26px;display:flex;gap:8px;align-items:center}
+.illus .icon{width:16px;height:16px}
+@media (max-width:900px){.stage{grid-template-columns:1fr}.stage-device{order:-1}}
+.live{margin-top:22px;display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;background:var(--indigo-50);border:1.5px solid var(--indigo-100);border-radius:18px;padding:22px 24px}
+.live-ico{width:48px;height:48px;border-radius:14px;background:var(--indigo);display:grid;place-items:center}
+.live-ico .icon{stroke:#fff;width:24px;height:24px}
+.live-text b{display:block;font-size:18px;color:var(--ink)}
+.live-text span{font-size:15px;color:var(--muted)}
+.btn-live{background:var(--indigo);color:#fff;white-space:nowrap}
+.btn-live:hover{background:#5b52f0}
+.btn-live .icon{stroke:#fff}
+@media (max-width:760px){.live{grid-template-columns:1fr;padding:20px}.btn-live{justify-content:center;white-space:normal}}
+
+/* ---------- Evidencia ---------- */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:36px}
+.block{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px}
+.block .icon{width:30px;height:30px;color:var(--indigo);margin-bottom:14px}
+.block p{color:var(--muted);font-size:16.5px}
+.schools{display:flex;flex-direction:column;gap:10px;margin-top:18px}
+.school{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;background:var(--bg);font-size:15.5px}
+.school b{color:var(--ink)}
+.tag{font-size:12.5px;font-weight:600;padding:4px 10px;border-radius:999px;white-space:nowrap}
+.tag-a{background:var(--indigo-50);color:var(--indigo-600)}
+.tag-b{background:var(--teal-50);color:#0b7a70}
+.quote{margin-top:28px;border-left:4px solid var(--teal);padding:6px 0 6px 20px;font-family:var(--serif);font-size:20px;color:var(--ink);max-width:62ch}
+.two > *{min-width:0}
+@media (max-width:800px){.two{grid-template-columns:1fr}}
+@media (max-width:600px){
+  .block{padding:22px 18px}
+  .school{flex-direction:column;align-items:flex-start;gap:6px}
+  .tag{white-space:normal}
+  .tbl-head,.note{padding-left:14px;padding-right:14px}
+}
+
+/* ---------- Piloto ---------- */
+.pilot{background:var(--ink);color:#c7d2fe}
+.pilot h2,.pilot h3{color:#fff}
+.pilot .lead{color:#a5b4fc}
+.timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px;counter-reset:step}
+.step{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:26px}
+.step-num{width:40px;height:40px;border-radius:12px;background:var(--indigo);color:#fff;display:grid;place-items:center;font-weight:700;margin-bottom:16px}
+.step .when{color:#5eead4;font-weight:600;font-size:14.5px;margin-bottom:4px}
+.step p{font-size:15.5px}
+.pilot-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+.pilot-box{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:26px}
+.pilot-box ul{list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:12px}
+.pilot-box li{display:flex;gap:10px;font-size:15.5px}
+.pilot-box li .icon{color:#5eead4;width:20px;height:20px;margin-top:2px}
+.hours{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin-top:14px;font-size:15.5px}
+.hours b{color:#fff;font-size:18px}
+@media (max-width:900px){.timeline,.pilot-grid{grid-template-columns:1fr}}
+
+/* ---------- Costos ---------- */
+.tables{display:flex;flex-direction:column;gap:28px;margin-top:38px}
+.tbl-wrap{background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.tbl-head{padding:22px 24px 6px}
+.tbl-head h3{font-family:var(--sans);font-size:18.5px;font-weight:700}
+.tbl-head p{color:var(--muted);font-size:15px}
+.scroll{overflow-x:auto}
+table.cost{width:100%;border-collapse:collapse;font-size:16px;min-width:560px}
+table.cost th{text-align:left;font-size:13.5px;font-weight:600;color:var(--muted);padding:12px 24px;border-bottom:1px solid var(--line)}
+table.cost td{padding:14px 24px;border-bottom:1px solid var(--line);vertical-align:top}
+table.cost tr:last-child td{border-bottom:0}
+table.cost td.num{text-align:right;font-weight:700;color:var(--ink);white-space:nowrap}
+table.cost th.num{text-align:right}
+table.cost .calc{color:var(--muted);white-space:nowrap}
+table.cost tr.total td{background:var(--indigo-50);font-weight:700;color:var(--ink)}
+table.cost tr.hl td{background:var(--teal-50)}
+table.cost tr.hl td.num{color:#0b7a70}
+.note{font-size:14px;color:var(--muted);padding:12px 24px 20px}
+.free{display:flex;align-items:center;gap:14px;background:var(--teal);color:#fff;border-radius:18px;padding:22px 26px}
+.free .icon{width:30px;height:30px}
+.free b{font-size:19px;display:block}
+.free span{color:#ccfbf1}
+
+.headline-cost{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;background:var(--ink);color:#c7d2fe;border-radius:18px;padding:28px 30px}
+.headline-cost b{display:block;font-family:var(--serif);font-size:clamp(34px,5vw,48px);color:#fff;line-height:1}
+.headline-cost span{font-size:15px;color:#5eead4;font-weight:600}
+.headline-cost p{font-size:18px;color:#e0e7ff}
+.includes{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.inc-box{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px}
+.inc-box h3{font-family:var(--sans);font-size:18.5px;font-weight:700}
+.inc-box p{color:var(--muted);font-size:15px}
+.inc-box ul{list-style:none;display:flex;flex-direction:column;gap:12px;margin-top:16px}
+.inc-box li{display:flex;gap:12px;font-size:15.5px}
+.inc-box li .icon{color:var(--indigo);width:22px;height:22px;margin-top:1px}
+.inc-bonus{position:relative;overflow:hidden;border:2px solid #f2b544;
+  background:
+   radial-gradient(circle at 12% 18%,#f59e0b 0 3px,transparent 4px),
+   radial-gradient(circle at 88% 12%,#ec4899 0 3px,transparent 4px),
+   radial-gradient(circle at 78% 30%,var(--indigo) 0 2.5px,transparent 3.5px),
+   radial-gradient(circle at 94% 62%,var(--teal) 0 3px,transparent 4px),
+   radial-gradient(circle at 70% 90%,#f59e0b 0 2.5px,transparent 3.5px),
+   radial-gradient(circle at 6% 82%,#ec4899 0 2.5px,transparent 3.5px),
+   linear-gradient(135deg,#fff8ea 0%,#fff1f6 55%,#eef2ff 100%);
+  box-shadow:0 18px 40px -22px rgba(217,119,6,.55)}
+.inc-bonus::before,.inc-bonus::after{content:"";position:absolute;width:14px;height:5px;border-radius:2px;pointer-events:none}
+.inc-bonus::before{top:22px;right:70px;background:var(--teal);transform:rotate(35deg)}
+.inc-bonus::after{bottom:28px;right:26px;background:var(--indigo);transform:rotate(-25deg)}
+.inc-bonus h3{color:#7c2d12}
+.inc-bonus li .icon{color:#d97706}
+.plus-badge{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(90deg,#f59e0b,#ec4899);color:#fff;font-weight:700;font-size:13.5px;padding:6px 12px;border-radius:999px;margin-bottom:12px;box-shadow:0 6px 14px -6px rgba(236,72,153,.6)}
+.plus-badge .icon{width:16px;height:16px;stroke:#fff}
+table.cost tr.plus td{background:#fff4e6}
+table.cost tr.plus td:first-child{box-shadow:inset 4px 0 0 #f59e0b;font-weight:600;color:#7c2d12}
+.plus-tag{display:inline-flex;align-items:center;gap:4px;margin-left:8px;background:linear-gradient(90deg,#f59e0b,#ec4899);color:#fff;font-size:12px;font-weight:700;padding:2px 9px;border-radius:999px;vertical-align:middle}
+.plus-tag .icon{width:13px;height:13px;stroke:#fff}
+.conditions{margin-top:22px;background:#fff;color:var(--text);border-radius:20px;padding:30px;border:3px solid #5eead4}
+.conditions h3{color:var(--ink);font-size:24px}
+.conditions > p{color:var(--muted)}
+.cond-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
+.cond{background:var(--teal-50);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:6px}
+.cond-ico{width:46px;height:46px;border-radius:14px;background:var(--teal);display:grid;place-items:center;margin-bottom:6px}
+.cond-ico .icon{stroke:#fff;width:24px;height:24px}
+.cond b{font-size:18px;color:var(--ink)}
+.cond span:last-child{font-size:15px;color:var(--muted)}
+@media (max-width:800px){.cond-grid{grid-template-columns:1fr}.conditions{padding:22px 18px}}
+@media (max-width:800px){.includes{grid-template-columns:1fr}.headline-cost{grid-template-columns:1fr;gap:12px;padding:24px 20px}}
+
+/* ---------- Evaluación ---------- */
+.questions{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:34px}
+.q{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 16px;font-weight:600;color:var(--ink);display:flex;flex-direction:column;gap:12px}
+.q .icon{color:var(--indigo)}
+.principle{margin-top:36px;background:var(--indigo-50);border-radius:18px;padding:30px;display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:start}
+.principle .icon{width:34px;height:34px;color:var(--indigo)}
+.principle b{font-family:var(--serif);font-size:24px;color:var(--ink);display:block;margin-bottom:6px}
+.principle p{color:var(--muted)}
+@media (max-width:900px){.questions{grid-template-columns:1fr 1fr}}
+
+/* ---------- Contacto ---------- */
+.contact{background:var(--ink);color:#c7d2fe}
+.contact h2{color:#fff}
+.people{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:34px}
+.person{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:26px}
+.person small{color:#a5b4fc;font-size:14px}
+.person b{display:block;color:#fff;font-size:20px;font-family:var(--serif);margin:4px 0 2px}
+.person span{font-size:15px}
+.person .btns .btn{margin-top:0}
+.motto{margin-top:46px;padding-top:30px;border-top:1px solid rgba(255,255,255,.12);display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;font-size:14px;color:#a5b4fc}
+.motto b{font-family:var(--serif);color:#fff;font-size:18px;font-weight:600}
+@media (max-width:800px){.people{grid-template-columns:1fr}}
+
+@media (max-width:600px){
+  table.cost{min-width:0;font-size:15px}
+  table.cost thead{display:none}
+  table.cost tr{display:grid;grid-template-columns:1fr auto;column-gap:12px;padding:12px 14px;border-bottom:1px solid var(--line)}
+  table.cost tr:last-child{border-bottom:0}
+  table.cost td{display:block;padding:0;border:0;background:transparent}
+  table.cost tr.total,table.cost tr.hl{background:var(--indigo-50)}
+  table.cost tr.hl{background:var(--teal-50)}
+  table.cost tr.plus{background:#fff4e6;box-shadow:inset 4px 0 0 #f59e0b}
+  table.cost tr.total td,table.cost tr.hl td,table.cost tr.plus td,table.cost tr.plus td:first-child{background:transparent;box-shadow:none}
+  table.cost td:first-child{grid-column:1;font-weight:600}
+  table.cost td.calc{grid-column:1;grid-row:2;white-space:normal;font-size:14px}
+  table.cost td.num{grid-column:2;grid-row:1 / span 2;align-self:center}
+  .tbl-head,.note{padding-left:14px;padding-right:14px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<!-- Íconos SVG -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-door" viewBox="0 0 24 24"><path d="M14 4h4a1 1 0 0 1 1 1v15"/><path d="M3 20h18"/><path d="M14 4 6 6v14"/><circle cx="11" cy="13" r=".6" fill="currentColor"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5"/><path d="M9 7h6"/></symbol>
+    <symbol id="i-trend" viewBox="0 0 24 24"><path d="m3 17 6-6 4 4 8-8"/><path d="M15 7h6v6"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10 21a2 2 0 0 0 4 0"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7"/><path d="M18 14.5a6.5 6.5 0 0 1 3.5 5.5"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M11 18h2"/></symbol>
+    <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 15V4"/><path d="m7 9 5-5 5 5"/><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></symbol>
+    <symbol id="i-gift" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 12.5l2 2 4-4.5"/></symbol>
+    <symbol id="i-present" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M5 12v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-8"/><path d="M12 8v13"/><path d="M12 8C10.5 5 7 4.5 7 6.5S10 8 12 8zM12 8c1.5-3 5-3.5 5-1.5S14 8 12 8z"/></symbol>
+    <symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6"/><path d="M20 4 10 14"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4"/><circle cx="12" cy="17" r=".6" fill="currentColor"/></symbol>
+    <symbol id="i-school" viewBox="0 0 24 24"><path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/><path d="M22 9v6"/></symbol>
+    <symbol id="i-server" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+    <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M2 8.5a15 15 0 0 1 20 0"/><path d="M5 12a10 10 0 0 1 14 0"/><path d="M8.5 15.5a5 5 0 0 1 7 0"/><circle cx="12" cy="19" r=".8" fill="currentColor"/></symbol>
+    <symbol id="i-person" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+    <symbol id="i-chalk" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20l2-4M16 20l-2-4M7 8h6M7 11h9"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.8 7L4 20.5 5.5 16A8 8 0 1 1 21 12z"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol>
+    <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 3v18M7 21h10M5 7h14"/><path d="m5 7-3 7a3 3 0 0 0 6 0z"/><path d="m19 7-3 7a3 3 0 0 0 6 0z"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 11 9-7 9 7"/><path d="M5 10v10h14V10"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><path d="M9 6h12M9 12h12M9 18h12M4 6h.01M4 12h.01M4 18h.01"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><circle cx="12" cy="8" r=".6" fill="currentColor"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></symbol>
+    <symbol id="sb-signal" viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></symbol>
+    <symbol id="sb-wifi" viewBox="0 0 16 12"><path d="M8 2.2c2.3 0 4.4.9 6 2.4l1.2-1.3A10.4 10.4 0 0 0 8 .4 10.4 10.4 0 0 0 .8 3.3L2 4.6a8.6 8.6 0 0 1 6-2.4zm0 3.6c1.3 0 2.5.5 3.4 1.4l1.2-1.3A6.6 6.6 0 0 0 8 4a6.6 6.6 0 0 0-4.6 1.9l1.2 1.3c.9-.9 2.1-1.4 3.4-1.4zm0 3.5c-.5 0-1 .2-1.4.6L8 11.4l1.4-1.5c-.4-.4-.9-.6-1.4-.6z"/></symbol>
+    <symbol id="sb-bat" viewBox="0 0 27 12"><rect x=".5" y=".5" width="22" height="11" rx="3" fill="none" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="17" height="8" rx="1.6"/><path d="M24 4v4c.8-.3 1.3-1.1 1.3-2S24.8 4.3 24 4z" opacity=".5"/></symbol>
+  </defs>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio">
+      <span class="brand-mark"><svg viewBox="0 0 24 24"><path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg></span>
+      Gestión Educativa Digital · Warnes
+    </a>
+    <nav class="nav" aria-label="Secciones">
+      <a href="#beneficios">Beneficios</a>
+      <a href="#pantallas">Cómo se ve</a>
+      <a href="#piloto">El piloto</a>
+      <a href="#costo">Costo</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+
+<!-- PORTADA -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-text">
+      <p class="presenta"><span class="dot"></span>Propuesta de la Junta Escolar al Gobierno Autónomo Municipal de Warnes</p>
+      <h1>Que cada familia de Warnes sepa, a tiempo, cómo le va a su hijo en el colegio.</h1>
+      <p class="lead">Un programa piloto para la gestión 2027: notas, asistencia y comunicados del colegio, visibles desde el celular de cada familia, en 15 unidades educativas del municipio.</p>
+      <div class="facts">
+        <span class="fact"><svg class="icon"><use href="#i-school"/></svg>15 unidades educativas</span>
+        <span class="fact"><svg class="icon"><use href="#i-calendar"/></svg>3 meses de piloto</span>
+        <span class="fact"><svg class="icon"><use href="#i-gift"/></svg>Sin costo para las familias</span>
+      </div>
+      <div class="btns">
+        <a class="btn btn-primary" href="#pantallas">Ver cómo se ve</a>
+        <a class="btn btn-ghost" href="#costo">Ver el costo</a>
+      </div>
+    </div>
+
+    <div class="hero-device">
+      <div class="iphone" role="img" aria-label="Celular con el panel del padre de familia: asistencia de hoy, promedio y comunicados">
+        <div class="screen">
+          <div class="island"></div>
+          <div class="status"><span>7:58</span><span class="status-icons"><svg viewBox="0 0 18 12"><use href="#sb-signal"/></svg><svg viewBox="0 0 16 12"><use href="#sb-wifi"/></svg><svg viewBox="0 0 27 12"><use href="#sb-bat"/></svg></span></div>
+          <div class="app">
+            <div class="app-head"><div><small>Padre de familia</small><b>Mis hijos</b></div><span class="avatar">CG</span></div>
+            <div class="card">
+              <div class="child"><span class="avatar">MG</span><div><b>Mateo Gutiérrez</b><span class="small">3ro de Secundaria A</span></div></div>
+            </div>
+            <div class="card">
+              <div class="row"><div><div class="card-title">Asistencia de hoy</div><b style="font-size:15px">Llegó a las 7:52</b></div><span class="pill pill-ok">Presente</span></div>
+            </div>
+            <div class="grid2">
+              <div class="card"><div class="card-title">Promedio 2do trimestre</div><div class="big">78</div><span class="pill pill-info">En curso</span></div>
+              <div class="card"><div class="card-title">Faltas este mes</div><div class="big">1</div><span class="small">justificada</span></div>
+            </div>
+            <div class="card">
+              <div class="card-title">Comunicados</div>
+              <div class="msg" style="margin-top:6px"><span class="msg-ico" style="background:var(--indigo-50);color:var(--indigo)"><svg><use href="#i-bell"/></svg></span><div><b>Reunión de padres</b><span>Dirección · Viernes 18:00 en el aula de 3ro A</span></div></div>
+              <div class="msg" style="margin-top:9px"><span class="msg-ico" style="background:var(--teal-50);color:var(--teal)"><svg><use href="#i-book"/></svg></span><div><b>Nota nueva: Matemática</b><span>Práctica de ecuaciones · 85</span></div></div>
+            </div>
+          </div>
+          <div class="tabbar"><div class="on"><svg><use href="#i-home"/></svg>Resumen</div><div><svg><use href="#i-mail"/></svg>Comunicados</div><div><svg><use href="#i-person"/></svg>Mi cuenta</div></div>
+          <div class="home-bar"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFICIOS -->
+<section id="beneficios">
+  <div class="wrap">
+    <h2>Lo que gana cada familia</h2>
+    <p class="lead">El padre de familia deja de enterarse al final del trimestre. Se entera mientras todavía hay tiempo de ayudar.</p>
+
+    <div class="benefits">
+      <div class="benefit"><svg class="icon"><use href="#i-door"/></svg><h3>Sabe si su hijo llegó al colegio</h3><p>El profesor registra la asistencia en clase y la familia la consulta el mismo día, sin llamar ni ir a dirección.</p></div>
+      <div class="benefit"><svg class="icon"><use href="#i-book"/></svg><h3>Ve las notas cuando se registran</h3><p>Calificaciones por materia y por dimensión (Ser, Saber, Hacer, Decidir), con el detalle de cada actividad. No espera la libreta.</p></div>
+      <div class="benefit"><svg class="icon"><use href="#i-trend"/></svg><h3>Puede actuar a tiempo</h3><p>Si su hijo baja en una materia, se entera durante el trimestre, cuando todavía se puede mejorar.</p></div>
+      <div class="benefit"><svg class="icon"><use href="#i-bell"/></svg><h3>Recibe los comunicados en su panel</h3><p>Los avisos del colegio y de los profesores no se pierden entre grupos de WhatsApp ni en papeles que no llegan a casa.</p></div>
+      <div class="benefit"><svg class="icon"><use href="#i-users"/></svg><h3>Todos sus hijos en una sola cuenta</h3><p>Sigue a cada uno de sus hijos desde la misma cuenta, aunque estén en cursos distintos.</p></div>
+      <div class="benefit"><svg class="icon"><use href="#i-phone"/></svg><h3>Desde el celular, sin instalar nada</h3><p>Funciona en el navegador del celular. Solo necesita conexión a internet.</p></div>
+      <div class="benefit"><svg class="icon"><use href="#i-upload"/></svg><h3>Tareas en línea, si el colegio lo habilita</h3><p>El estudiante puede subir sus trabajos y la familia ve qué tiene pendiente. El director decide si su colegio usa esta opción.</p></div>
+      <div class="benefit"><svg class="icon"><use href="#i-alert"/></svg><h3>El colegio detecta a tiempo el riesgo</h3><p>La dirección ve qué estudiantes están reprobando varias materias y puede intervenir antes del cierre del trimestre.</p></div>
+      <div class="benefit"><svg class="icon"><use href="#i-gift"/></svg><h3>Sin costo para la familia</h3><p>Las familias y los colegios no pagan nada. El programa lo financia el Gobierno Municipal.</p></div>
+    </div>
+
+    <div class="notice" role="note">
+      <svg class="icon"><use href="#i-info"/></svg>
+      <div>
+        <b>Para que funcione bien</b>
+        <ul>
+          <li>El sistema muestra lo que el profesor registra. Por eso la capacitación se centra en los profesores.</li>
+          <li>Padres y estudiantes necesitan conexión a internet para consultar.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PANTALLAS -->
+<section id="pantallas" class="screens">
+  <div class="wrap">
+    <h2>Así se ve en cada pantalla</h2>
+    <p class="lead">Cada persona entra con su propia cuenta y ve solo lo que le corresponde. Elija un rol para ver su pantalla.</p>
+
+    <div class="roles" role="tablist" aria-label="Elegir rol">
+      <button class="role-btn" role="tab" aria-selected="true" aria-controls="p-padre" id="t-padre" data-role="padre"><svg><use href="#i-users"/></svg>Padre de familia</button>
+      <button class="role-btn" role="tab" aria-selected="false" aria-controls="p-estudiante" id="t-estudiante" data-role="estudiante" tabindex="-1"><svg><use href="#i-person"/></svg>Estudiante</button>
+      <button class="role-btn" role="tab" aria-selected="false" aria-controls="p-director" id="t-director" data-role="director" tabindex="-1"><svg><use href="#i-school"/></svg>Director</button>
+      <button class="role-btn" role="tab" aria-selected="false" aria-controls="p-profesor" id="t-profesor" data-role="profesor" tabindex="-1"><svg><use href="#i-chalk"/></svg>Profesor</button>
+    </div>
+
+    <!-- Padre -->
+    <div class="panel-role" id="p-padre" role="tabpanel" aria-labelledby="t-padre">
+      <div class="stage">
+        <div class="stage-text">
+          <h3>Padre de familia</h3>
+          <p>Desde su celular ve la situación de cada hijo y recibe los avisos del colegio.</p>
+          <ul>
+            <li><svg class="icon"><use href="#i-check"/></svg>Si su hijo llegó hoy y a qué hora.</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>Cómo va su promedio en el trimestre.</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>Comunicados del director y de los profesores.</li>
+          </ul>
+        </div>
+        <div class="stage-device">
+          <div class="iphone" role="img" aria-label="Celular con los comunicados del padre de familia">
+            <div class="screen">
+              <div class="island"></div>
+              <div class="status"><span>19:20</span><span class="status-icons"><svg viewBox="0 0 18 12"><use href="#sb-signal"/></svg><svg viewBox="0 0 16 12"><use href="#sb-wifi"/></svg><svg viewBox="0 0 27 12"><use href="#sb-bat"/></svg></span></div>
+              <div class="app">
+                <div class="app-head"><div><small>Padre de familia</small><b>Comunicados</b></div><span class="avatar">CG</span></div>
+                <div class="seg"><span class="on">Todos</span><span>Sin leer (2)</span></div>
+                <div class="card"><div class="msg"><span class="msg-ico" style="background:var(--indigo-50);color:var(--indigo)"><svg><use href="#i-bell"/></svg></span><div><div class="row"><b>Reunión de padres</b><span class="pill pill-info">Nuevo</span></div><span>Dirección · Se convoca a reunión el viernes a las 18:00 en el aula de 3ro A.</span></div></div></div>
+                <div class="card"><div class="msg"><span class="msg-ico" style="background:var(--amber-50);color:var(--amber)"><svg><use href="#i-alert"/></svg></span><div><div class="row"><b>Seguimiento en Física</b><span class="pill pill-info">Nuevo</span></div><span>Prof. Andrea Salinas · Mateo necesita reforzar el tema de movimiento.</span></div></div></div>
+                <div class="card"><div class="msg"><span class="msg-ico" style="background:var(--teal-50);color:var(--teal)"><svg><use href="#i-book"/></svg></span><div><div class="row"><b>Libreta disponible</b><span class="pill pill-ok">Leído</span></div><span>Dirección · Ya puede ver la libreta del 1er trimestre.</span></div></div></div>
+                <div class="card"><div class="msg"><span class="msg-ico" style="background:var(--indigo-50);color:var(--indigo)"><svg><use href="#i-calendar"/></svg></span><div><div class="row"><b>Feria de ciencias</b><span class="pill pill-ok">Leído</span></div><span>Prof. Laura Méndez · Presentación de proyectos el 14 de mayo.</span></div></div></div>
+              </div>
+              <div class="tabbar"><div><svg><use href="#i-home"/></svg>Resumen</div><div class="on"><svg><use href="#i-mail"/></svg>Comunicados</div><div><svg><use href="#i-person"/></svg>Mi cuenta</div></div>
+              <div class="home-bar"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Estudiante -->
+    <div class="panel-role" id="p-estudiante" role="tabpanel" aria-labelledby="t-estudiante" hidden>
+      <div class="stage">
+        <div class="stage-text">
+          <h3>Estudiante</h3>
+          <p>Ve sus notas por materia y por dimensión, y lleva el control de su propia asistencia.</p>
+          <ul>
+            <li><svg class="icon"><use href="#i-check"/></svg>Notas de Ser, Saber, Hacer y Decidir en cada materia.</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>El trimestre aparece "En curso" mientras no se cierra.</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>Su historial de asistencia y los comunicados recibidos.</li>
+          </ul>
+        </div>
+        <div class="stage-device">
+          <div class="iphone" role="img" aria-label="Celular con las notas del estudiante por materia y dimensión">
+            <div class="screen">
+              <div class="island"></div>
+              <div class="status"><span>16:05</span><span class="status-icons"><svg viewBox="0 0 18 12"><use href="#sb-signal"/></svg><svg viewBox="0 0 16 12"><use href="#sb-wifi"/></svg><svg viewBox="0 0 27 12"><use href="#sb-bat"/></svg></span></div>
+              <div class="app">
+                <div class="app-head"><div><small>3ro de Secundaria A</small><b>Mis notas</b></div><span class="avatar">MG</span></div>
+                <div class="seg"><span>1er trim.</span><span class="on">2do trim.</span><span>Anual</span></div>
+                <div class="card subj"><div class="subj-top">Matemática<span>82</span></div>
+                  <div class="dims"><div class="dim">Ser<i style="--v:90%"></i></div><div class="dim">Saber<i style="--v:78%"></i></div><div class="dim">Hacer<i style="--v:85%"></i></div><div class="dim">Decidir<i style="--v:80%"></i></div></div></div>
+                <div class="card subj"><div class="subj-top">Lenguaje<span>79</span></div>
+                  <div class="dims"><div class="dim">Ser<i style="--v:88%"></i></div><div class="dim">Saber<i style="--v:72%"></i></div><div class="dim">Hacer<i style="--v:80%"></i></div><div class="dim">Decidir<i style="--v:76%"></i></div></div></div>
+                <div class="card subj"><div class="subj-top">Física<span style="color:var(--amber)">58</span></div>
+                  <div class="dims"><div class="dim">Ser<i style="--v:70%"></i></div><div class="dim">Saber<i style="--v:50%"></i></div><div class="dim">Hacer<i style="--v:55%"></i></div><div class="dim">Decidir<i style="--v:60%"></i></div></div></div>
+                <div class="card subj"><div class="subj-top">Ciencias Naturales<span>84</span></div>
+                  <div class="dims"><div class="dim">Ser<i style="--v:92%"></i></div><div class="dim">Saber<i style="--v:80%"></i></div><div class="dim">Hacer<i style="--v:86%"></i></div><div class="dim">Decidir<i style="--v:82%"></i></div></div></div>
+                <div class="card"><div class="row"><div><div class="card-title">Mi asistencia del trimestre</div><b style="font-size:15px">96 %</b></div><span class="pill pill-info">En curso</span></div></div>
+              </div>
+              <div class="tabbar"><div><svg><use href="#i-home"/></svg>Inicio</div><div class="on"><svg><use href="#i-book"/></svg>Notas</div><div><svg><use href="#i-calendar"/></svg>Asistencia</div><div><svg><use href="#i-mail"/></svg>Avisos</div></div>
+              <div class="home-bar"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Director -->
+    <div class="panel-role" id="p-director" role="tabpanel" aria-labelledby="t-director" hidden>
+      <div class="stage">
+        <div class="stage-text">
+          <h3>Director</h3>
+          <p>Ve el estado de toda la unidad educativa sin esperar que le entreguen planillas.</p>
+          <ul>
+            <li><svg class="icon"><use href="#i-check"/></svg>Semáforo de riesgo: quién está reprobando varias materias.</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>Rendimiento por materia, para saber dónde reforzar.</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>Reportes en el formato del Ministerio y libretas en PDF.</li>
+          </ul>
+        </div>
+        <div class="stage-device">
+          <div class="laptop" role="img" aria-label="Pantalla de computadora con el panel del director">
+            <div class="lid"><div class="browser">
+              <div class="chrome"><div class="dots"><i></i><i></i><i></i></div><div class="address"><svg viewBox="0 0 24 24"><use href="#i-lock"/></svg>Plataforma de Gestión Educativa</div></div>
+              <div class="dash">
+                <div class="side">
+                  <div class="logo"><i></i>Gestión Educativa</div>
+                  <a class="on"><svg><use href="#i-home"/></svg>Inicio</a>
+                  <a><svg><use href="#i-users"/></svg>Estudiantes</a>
+                  <a><svg><use href="#i-chalk"/></svg>Profesores</a>
+                  <a><svg><use href="#i-grid"/></svg>Cursos</a>
+                  <a><svg><use href="#i-doc"/></svg>Reportes</a>
+                  <a><svg><use href="#i-calendar"/></svg>Asistencias</a>
+                  <a><svg><use href="#i-mail"/></svg>Comunicados</a>
+                </div>
+                <div class="main">
+                  <div class="main-head"><div><b>Panel general</b><small>Unidad educativa de ejemplo · Gestión 2027</small></div><span class="pill pill-info">2do trimestre en curso</span></div>
+                  <div class="stats">
+                    <div class="stat"><small>Estudiantes</small><b>1.184</b></div>
+                    <div class="stat"><small>Profesores</small><b>46</b></div>
+                    <div class="stat"><small>Cursos</small><b>32</b></div>
+                    <div class="stat"><small>Asistencia hoy</small><b>94 %</b></div>
+                  </div>
+                  <div class="panels">
+                    <div class="panel"><h4>Semáforo de riesgo</h4>
+                      <div class="light">
+                        <div style="background:var(--red-50);color:#b91c1c"><b>4</b>Crítico</div>
+                        <div style="background:var(--amber-50);color:#a85b04"><b>11</b>En riesgo</div>
+                        <div style="background:var(--teal-50);color:#0b7a70"><b>1.169</b>Al día</div>
+                      </div>
+                      <div class="risk"><span>Diego Morales · 4to B</span><span class="pill pill-bad">4 materias</span></div>
+                      <div class="risk"><span>Camila Herrera · 3ro A</span><span class="pill pill-bad">3 materias</span></div>
+                      <div class="risk"><span>Sebastián Castro · 5to A</span><span class="pill pill-warn">2 materias</span></div>
+                    </div>
+                    <div class="panel"><h4>Rendimiento por materia</h4>
+                      <div class="bar">Matemática<i style="--v:72%"></i>72</div>
+                      <div class="bar">Lenguaje<i style="--v:79%"></i>79</div>
+                      <div class="bar">Física<i style="--v:61%;--c:var(--amber)"></i>61</div>
+                      <div class="bar">Química<i style="--v:68%"></i>68</div>
+                      <div class="bar">C. Naturales<i style="--v:81%"></i>81</div>
+                      <div class="bar">C. Sociales<i style="--v:84%"></i>84</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div></div>
+            <div class="base"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Profesor -->
+    <div class="panel-role" id="p-profesor" role="tabpanel" aria-labelledby="t-profesor" hidden>
+      <div class="stage">
+        <div class="stage-text">
+          <h3>Profesor</h3>
+          <p>Registra la asistencia y las notas una sola vez. El sistema calcula promedios y genera los informes.</p>
+          <ul>
+            <li><svg class="icon"><use href="#i-check"/></svg>Asistencia por materia con un toque por estudiante.</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>Notas por actividad en Ser, Saber, Hacer y Decidir.</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>Informes de bajo rendimiento y de junta trimestral listos.</li>
+          </ul>
+        </div>
+        <div class="stage-device">
+          <div class="laptop" role="img" aria-label="Pantalla de computadora con el registro de asistencia del profesor">
+            <div class="lid"><div class="browser">
+              <div class="chrome"><div class="dots"><i></i><i></i><i></i></div><div class="address"><svg viewBox="0 0 24 24"><use href="#i-lock"/></svg>Plataforma de Gestión Educativa</div></div>
+              <div class="dash">
+                <div class="side">
+                  <div class="logo"><i></i>Gestión Educativa</div>
+                  <a><svg><use href="#i-home"/></svg>Inicio</a>
+                  <a><svg><use href="#i-book"/></svg>Calificaciones</a>
+                  <a class="on"><svg><use href="#i-calendar"/></svg>Asistencia</a>
+                  <a><svg><use href="#i-list"/></svg>Mis cursos</a>
+                  <a><svg><use href="#i-doc"/></svg>Bitácora</a>
+                  <a><svg><use href="#i-mail"/></svg>Comunicados</a>
+                </div>
+                <div class="main">
+                  <div class="main-head"><div><b>Asistencia · Matemática</b><small>3ro de Secundaria A · martes 9 de marzo</small></div><span class="pill pill-ok">27 de 29 presentes</span></div>
+                  <div class="panel" style="padding:0;overflow:hidden">
+                    <table class="att">
+                      <thead><tr><th>Estudiante</th><th>P · F · L · Lic.</th></tr></thead>
+                      <tbody>
+                        <tr><td>Castro, Sebastián</td><td><span class="mark"><span class="p">P</span><span>F</span><span>L</span><span>Li</span></span></td></tr>
+                        <tr><td>Fernández, Lucía</td><td><span class="mark"><span class="p">P</span><span>F</span><span>L</span><span>Li</span></span></td></tr>
+                        <tr><td>Gutiérrez, Mateo</td><td><span class="mark"><span class="p">P</span><span>F</span><span>L</span><span>Li</span></span></td></tr>
+                        <tr><td>Herrera, Camila</td><td><span class="mark"><span>P</span><span class="f">F</span><span>L</span><span>Li</span></span></td></tr>
+                        <tr><td>Morales, Diego</td><td><span class="mark"><span>P</span><span>F</span><span class="l">L</span><span>Li</span></span></td></tr>
+                        <tr><td>Peña, Sofía</td><td><span class="mark"><span class="p">P</span><span>F</span><span>L</span><span>Li</span></span></td></tr>
+                        <tr><td>Rojas, Valentina</td><td><span class="mark"><span class="p">P</span><span>F</span><span>L</span><span>Li</span></span></td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <span class="save">Guardar asistencia</span>
+                </div>
+              </div>
+            </div></div>
+            <div class="base"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="illus"><svg class="icon"><use href="#i-info"/></svg>Vista ilustrativa del sistema. Los nombres y datos son de ejemplo.</p>
+
+    <div class="live">
+      <span class="live-ico"><svg class="icon"><use href="#i-globe"/></svg></span>
+      <div class="live-text">
+        <b>Este sistema ya está en línea</b>
+        <span>Puede abrir la pantalla de ingreso real de la plataforma. Para entrar se necesita una cuenta, que entrega cada unidad educativa a sus directores, profesores, estudiantes y familias.</span>
+      </div>
+      <a class="btn btn-live" href="https://colegio-buena-fe.vercel.app/" target="_blank" rel="noopener">Ver el sistema en vivo<svg class="icon" style="width:18px;height:18px"><use href="#i-ext"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- EVIDENCIA Y CAPACIDAD -->
+<section id="funciona">
+  <div class="wrap">
+    <h2>No se empieza de cero</h2>
+    <p class="lead">El sistema ya está funcionando en Warnes, en las condiciones reales de nuestros colegios.</p>
+    <div class="two">
+      <div class="block">
+        <svg class="icon"><use href="#i-school"/></svg>
+        <h3>El sistema ya funciona en Warnes</h3>
+        <p>La plataforma está en uso en tres unidades educativas del municipio. Esta experiencia demuestra que el sistema funciona con los docentes, la conectividad y la forma de trabajo de los colegios fiscales. El programa propuesto amplía una experiencia que ya existe.</p>
+        <div class="schools">
+          <div class="school"><b>U.E. Privada Gloria II</b><span class="tag tag-a">Todo el nivel secundario</span></div>
+          <div class="school"><b>U.E. Buena Fe</b><span class="tag tag-b">Fiscal · piloto en algunos cursos</span></div>
+          <div class="school"><b>U.E. Juana Azurduy de Padilla</b><span class="tag tag-b">Fiscal · piloto en algunos cursos</span></div>
+        </div>
+      </div>
+      <div class="block">
+        <svg class="icon"><use href="#i-shield"/></svg>
+        <h3>¿Puede atender a tantos colegios?</h3>
+        <p>Sí. La plataforma está preparada para atender a muchos más colegios que los del piloto. Su capacidad permite incorporar sin problemas a las 15 unidades educativas propuestas.</p>
+        <p style="margin-top:12px">Además, la información de cada colegio se respalda todos los días, para que ninguna nota ni asistencia se pierda. Cada unidad educativa ve únicamente sus propios datos.</p>
+        <p style="margin-top:12px">El sistema está hecho en Bolivia y sigue nuestra normativa: evaluación en Ser, Saber, Hacer y Decidir, reportes en el formato del Ministerio y manejo de las carreras técnicas del Bachillerato Técnico Humanístico.</p>
+      </div>
+    </div>
+    <p class="quote">Gobiernos de otros países ya ofrecen a las familias de las escuelas públicas una libreta digital para ver calificaciones, asistencia y comunicados. Warnes puede dar ese paso con un sistema hecho en Bolivia y adaptado a nuestra normativa.</p>
+  </div>
+</section>
+
+<!-- PILOTO -->
+<section id="piloto" class="pilot">
+  <div class="wrap">
+    <h2>Cómo sería el piloto</h2>
+    <p class="lead">Tres meses en 15 unidades educativas del municipio de Warnes, durante la gestión escolar 2027.</p>
+
+    <div class="timeline">
+      <div class="step"><div class="step-num">1</div><div class="when">Febrero</div><h3>Capacitación</h3><p>Talleres presenciales en cada colegio para directores, profesores y padres de familia. Se pone el foco en los profesores, porque son quienes registran la información.</p></div>
+      <div class="step"><div class="step-num">2</div><div class="when">Marzo y abril</div><h3>Uso con acompañamiento</h3><p>Los colegios usan el sistema todos los días, con soporte para resolver dudas y visitas de seguimiento.</p></div>
+      <div class="step"><div class="step-num">3</div><div class="when">Al cierre</div><h3>Evaluación de resultados</h3><p>Se entrega a la Alcaldía y a la Junta Escolar un informe con los resultados, para decidir si se continúa.</p></div>
+    </div>
+
+    <div class="pilot-grid">
+      <div class="pilot-box">
+        <h3>¿Cómo se eligen las 15 unidades educativas?</h3>
+        <p>La Junta Escolar y el Gobierno Autónomo Municipal eligen juntos las unidades educativas participantes, distribuidas en distintas zonas del municipio, por ejemplo Satélite Norte, Warnes capital y Valle Sánchez.</p>
+        <p style="margin-top:12px">Cada colegio elegido debe cumplir las tres condiciones que se detallan abajo.</p>
+      </div>
+      <div class="pilot-box">
+        <h3>Capacitación incluida, sin costo adicional</h3>
+        <p>En febrero se capacita en cada colegio a todos los actores educativos: directores, profesores y familias. El foco está en los profesores, porque son quienes registran la información.</p>
+        <div class="hours">
+          <b>6 h</b><span>con dirección y profesores en cada colegio (2 sesiones de 3 horas)</span>
+          <b>3 h</b><span>con padres de familia en cada colegio (1 sesión)</span>
+          <b>9 h</b><span>de capacitación por unidad educativa</span>
+          <b>135 h</b><span>en total para las 15 unidades educativas</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="conditions">
+      <h3>Tres condiciones para que el piloto funcione</h3>
+      <p>Sin estas tres condiciones, las familias no verán la información. Por eso son indispensables al elegir cada colegio.</p>
+      <div class="cond-grid">
+        <div class="cond"><span class="cond-ico"><svg class="icon"><use href="#i-wifi"/></svg></span><b>Internet en el colegio</b><span>Conexión estable o señal móvil suficiente en la zona, para registrar y consultar.</span></div>
+        <div class="cond"><span class="cond-ico"><svg class="icon"><use href="#i-school"/></svg></span><b>Un director comprometido</b><span>Que impulse el uso del sistema y acompañe el proceso en su unidad educativa.</span></div>
+        <div class="cond"><span class="cond-ico"><svg class="icon"><use href="#i-chalk"/></svg></span><b>Profesores que registren</b><span>Notas y asistencia cargadas a tiempo. Si el profesor no registra, la familia no ve nada.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COSTO -->
+<section id="costo">
+  <div class="wrap">
+    <h2>Cuánto cuesta</h2>
+    <p class="lead">Un precio fijo mensual por el servicio completo de la plataforma. Lo cubre el Gobierno Autónomo Municipal; las familias no pagan nada.</p>
+
+    <div class="tables">
+      <div class="free"><svg class="icon"><use href="#i-gift"/></svg><div><b>Para las familias y los colegios no tiene ningún costo.</b><span>Ni inscripción, ni mensualidad, ni pagos por usar el sistema.</span></div></div>
+
+      <div class="headline-cost">
+        <div><b>Menos de Bs 1</b><span>por estudiante al mes</span></div>
+        <p>Por unos 3 centavos al día, cada familia puede saber si su hijo llegó al colegio, cómo van sus notas y qué le comunica el colegio.</p>
+      </div>
+
+      <div class="tbl-wrap">
+        <div class="tbl-head"><h3>El costo, explicado paso a paso</h3><p>El precio es el mismo todos los meses: Bs 15.000 por el servicio en las 15 unidades educativas.</p></div>
+        <div class="scroll">
+          <table class="cost">
+            <thead><tr><th>Pregunta</th><th>Cómo se calcula</th><th class="num">Respuesta</th></tr></thead>
+            <tbody>
+              <tr><td>¿Cuánto cuesta el servicio al mes?</td><td class="calc">Precio fijo para 15 colegios</td><td class="num">Bs 15.000</td></tr>
+              <tr><td>¿Cuánto es por colegio al mes?</td><td class="calc">Bs 15.000 ÷ 15 colegios</td><td class="num">Bs 1.000</td></tr>
+              <tr class="hl"><td>¿Cuánto es por estudiante al mes?</td><td class="calc">Bs 15.000 ÷ 18.000 estudiantes</td><td class="num">Bs 0,83</td></tr>
+              <tr class="hl"><td>¿Y por estudiante al día?</td><td class="calc">Bs 0,83 ÷ 30 días</td><td class="num">unos 3 centavos</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">Cálculo con un promedio estimado de 1.200 estudiantes por unidad educativa (15 × 1.200 = 18.000 estudiantes).</p>
+      </div>
+
+      <div class="includes">
+        <div class="inc-box">
+          <h3>Lo que paga la Alcaldía cada mes</h3>
+          <p>El servicio de la plataforma funcionando para toda la comunidad educativa.</p>
+          <ul>
+            <li><svg class="icon"><use href="#i-server"/></svg>La plataforma disponible todos los días para directores, profesores, estudiantes y familias.</li>
+            <li><svg class="icon"><use href="#i-shield"/></svg>Respaldo diario de notas y asistencia, y cada colegio ve solo sus propios datos.</li>
+            <li><svg class="icon"><use href="#i-trend"/></svg>Mantenimiento y mejoras, incluidos los ajustes si cambia la normativa de evaluación.</li>
+            <li><svg class="icon"><use href="#i-chat"/></svg>Soporte para resolver dudas y problemas de uso.</li>
+          </ul>
+        </div>
+        <div class="inc-box inc-bonus">
+          <span class="plus-badge"><svg class="icon"><use href="#i-present"/></svg>Plus incluido</span>
+          <h3>Incluido sin costo durante el piloto</h3>
+          <p>Un plus para que los colegios empiecen bien. No se vuelve a cobrar.</p>
+          <ul>
+            <li><svg class="icon"><use href="#i-chalk"/></svg>Capacitación presencial en febrero para todos los actores educativos: directores, profesores y familias, con foco en los profesores.</li>
+            <li><svg class="icon"><use href="#i-doc"/></svg>Guías de uso para cada tipo de usuario.</li>
+            <li><svg class="icon"><use href="#i-search"/></svg>Acompañamiento en las primeras semanas de uso.</li>
+            <li><svg class="icon"><use href="#i-list"/></svg>Informe de resultados para la Alcaldía y la Junta Escolar.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tbl-wrap">
+        <div class="tbl-head"><h3>Toda la gestión escolar 2027</h3><p>Si el piloto da buenos resultados, el servicio continúa al mismo precio durante los 6 meses restantes de la gestión. La Alcaldía puede pagar mes a mes o en un solo pago.</p></div>
+        <div class="scroll">
+          <table class="cost">
+            <thead><tr><th>Etapa</th><th>Duración</th><th class="num">Costo</th></tr></thead>
+            <tbody>
+              <tr class="plus"><td>Piloto: servicio más capacitación incluida como plus <span class="plus-tag"><svg class="icon"><use href="#i-present"/></svg>Plus</span></td><td class="calc">3 meses × Bs 15.000</td><td class="num">Bs 45.000</td></tr>
+              <tr><td>Continuidad, solo si el piloto es favorable</td><td class="calc">6 meses × Bs 15.000</td><td class="num">Bs 90.000</td></tr>
+              <tr class="total"><td>Total de la gestión 2027</td><td class="calc">9 meses</td><td class="num">Bs 135.000</td></tr>
+              <tr class="hl"><td>Por estudiante, todo el año escolar</td><td class="calc">Bs 135.000 ÷ 18.000 estudiantes</td><td class="num">Bs 7,50</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">Menos de Bs 10 por estudiante para todo el año escolar. La capacitación se realiza en febrero y no tiene costo adicional: está incluida como plus del piloto.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EVALUACIÓN -->
+<section id="evaluacion" class="screens">
+  <div class="wrap">
+    <h2>Evaluar antes de ampliar</h2>
+    <p class="lead">El piloto debe producir evidencia. Al cierre se responden cinco preguntas, con la opinión de directores, profesores y familias.</p>
+    <div class="questions">
+      <div class="q"><svg class="icon"><use href="#i-check"/></svg>¿Funciona en el día a día del colegio?</div>
+      <div class="q"><svg class="icon"><use href="#i-clock"/></svg>¿Ahorra tiempo a los profesores?</div>
+      <div class="q"><svg class="icon"><use href="#i-search"/></svg>¿Facilita el seguimiento de cada estudiante?</div>
+      <div class="q"><svg class="icon"><use href="#i-users"/></svg>¿Es útil para las familias?</div>
+      <div class="q"><svg class="icon"><use href="#i-scale"/></svg>¿Ayuda a tomar mejores decisiones?</div>
+    </div>
+    <div class="principle">
+      <svg class="icon"><use href="#i-shield"/></svg>
+      <div>
+        <b>Información para decidir, no para controlar.</b>
+        <p>Cada unidad educativa mantiene su independencia. La Alcaldía no fiscaliza aulas ni docentes: recibe información consolidada para conocer las necesidades y orientar mejor su apoyo a la educación del municipio.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="contact">
+  <div class="wrap">
+    <h2>Quiénes presentan esta propuesta</h2>
+    <p class="lead" style="color:#a5b4fc">Las familias de Warnes respaldan esta iniciativa y solicitan su implementación para la gestión 2027.</p>
+    <div class="people">
+      <div class="person">
+        <small>Presidenta de la Junta Escolar de Padres de Familia del Municipio de Warnes</small>
+        <b>Sra. Giovanna Ramos</b>
+        <span>Respalda y presenta la propuesta en nombre de las familias.</span>
+      </div>
+      <div class="person">
+        <small>Proponente técnico · Responsable de la implementación</small>
+        <b>Juan David Uscamayta Ramos</b>
+        <span>WhatsApp 73138524</span>
+        <div class="btns" style="margin-top:18px">
+        <a class="btn btn-primary" href="https://wa.me/59173138524?text=Hola%2C%20quisiera%20coordinar%20una%20reuni%C3%B3n%20sobre%20el%20piloto%20de%20gesti%C3%B3n%20educativa%20digital%20en%20Warnes" target="_blank" rel="noopener"><svg class="icon" style="width:20px;height:20px"><use href="#i-chat"/></svg>Coordinar una reunión</a>
+        <a class="btn btn-ghost" href="https://colegio-buena-fe.vercel.app/" target="_blank" rel="noopener">Ver el sistema en vivo</a>
+        </div>
+      </div>
+    </div>
+    <div class="motto">
+      <b>La tecnología es el medio. La educación es el propósito. El estudiante es el centro.</b>
+      <span>Propuesta para el Gobierno Autónomo Municipal de Warnes · Gestión 2027</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script>
+(function(){
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.role-btn'));
+  function select(tab){
+    tabs.forEach(function(t){
+      var on = t === tab;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.tabIndex = on ? 0 : -1;
+      document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+    });
+  }
+  tabs.forEach(function(t, i){
+    t.addEventListener('click', function(){ select(t); });
+    t.addEventListener('keydown', function(e){
+      var n = null;
+      if (e.key === 'ArrowRight') n = tabs[(i + 1) % tabs.length];
+      if (e.key === 'ArrowLeft') n = tabs[(i - 1 + tabs.length) % tabs.length];
+      if (n){ e.preventDefault(); select(n); n.focus(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
